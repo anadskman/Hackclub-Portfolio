@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hackclub Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <section class="hero">
+            <div class="stars"></div>
+            <div class="stars stars-small"></div>
+            <div class="stars stars-tiny"></div>
+            <div class="meteor"></div>
+            <div class="hero-text">
+                <h2>My Hackclub Portfolio</h2>
+                <h3>Jason Clark</h3>
+            </div>
+            <h4>Whats down here...</h4>
+        </section>
+
+        <section class="cards">
+            <div class="hackclub-program">
+                <h2>Contruct</h2>
+                <a href="#construct"><img src="construct.png" class="program-img">
+                    <span><h3>Click to View my Construct Projects</h3></span>
+                </a>
+            </div>
+            <div class="hackclub-program">
+                <h2>Blueprint</h2>
+                <a href="#blueprint"><img src="blueprint.png" class="program-img">
+                    <span><h3>Click to View my Blueprint Projects</h3></span>
+                </a>
+            </div>
+            <div class="hackclub-program">
+                <h2>Flavortown</h2>
+                <a href="#flavortown"><img src="flavortown.png" class="program-img">
+                    <span><h3>Click to View my Flavortown Projects</h3></span>
+                </a>
+            </div>
+        </section>
+        <main>
+            <section id="construct">
+                <img src="construct.png" class="main-img">
+                <div class="project-div">
+                    <div class="project">
+                        <a href="https://construct.hackclub.com/projects/">
+                            <img src="no-image.avif" alt="macropad" class="project-img">
+                            <h2>Emtpy Project</h2>
+                            <h3>Nothing here yet...</h3>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="blueprint">
+                <img src="blueprint.png" class="main-img">
+                <div class="project-div">
+
+                    <div class="project">
+                        <a href="https://blueprint.hackclub.com/projects/7968">
+                            <img src="macropad.jpeg" alt="macropad" class="project-img">
+                            <h2>Jason's MacroPad</h2>
+                            <h3>My first keyboard project. It has 4 keys, 'select all', 'cut', 'copy', and 'paste'.
+                                I added a oled screen and a rotary encoder, the encoder 
+                                controls volume and the oled is to display any text</h3>
+                        </a>
+                    </div>
+
+                    <div class="project">
+                        <a href="https://blueprint.hackclub.com/projects/8085">
+                            <img src="jukebox.jpeg" alt="jukebox" class="project-img">
+                            <h2>Jason's Jukebox</h2>
+                            <h3>A minecraft style jukebox, uses a RFID reader and card(the disk).
+                                Then plays music through a DFPlayer.
+                                This is powered by a esp32-c3 supermini</h3>
+                        </a>
+                    </div>
+
+                    <div class="project">
+                        <a href="https://blueprint.hackclub.com/projects/9080">
+                            <img src="shamrock.png" alt="lamp" class="project-img">
+                            <h2>Solas Sense Shamrock Lamp</h2>
+                            <h3>Im making a small lamp with rgb leds and ldr.
+                                if the room is bright so will the leds and if the room is dim so are the leds
+                            </h3>
+                        </a>
+                    </div>
+
+                    <div class="project">
+                        <a href="https://blueprint.hackclub.com/projects/11176">
+                            <img src="extractor.png" alt="extractor" class="project-img">
+                            <h2>Soldering Fume Extractor</h2>
+                            <h3>A Fume extractor for soldering.</h3>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+            <section id="flavortown">
+                <img src="flavortown.png" class="main-img">
+                <div class="project-div">
+
+                    <div class="project">
+                        <a href="https://flavortown.hackclub.com/projects/11174">
+                            <img src="stopwatch.png" alt="stopwatch" class="project-img">
+                            <h2>Floating Stopwatch</h2>
+                            <h3>A simple python stopwatch that sits anywhere on screen, is simple and uses hotkeys</h3>
+                        </a>
+                    </div>
+
+                    <div class="project">
+                        <a href="https://flavortown.hackclub.com/projects/11601">
+                            <img src="extractor.png" alt="extractor" class="project-img">
+                            <h2>Hackclub Portfolio</h2>
+                            <h3>Simple Portfolio to display all my hackclub projects. 
+                                Split Up in Categories for each site(Construct, Blueprint, and Flavortown)<br>
+                                Space Themed:<br>
+                                This is space themed,<br>
+                                be aware of meteors!
+                            </h3>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+        <script>
+function spawnMeteor() {
+  const meteor = document.createElement("div");
+  meteor.className = "meteor";
+
+  // start on the left at random vertical position
+  meteor.style.left = "-50px";
+  meteor.style.top = Math.random() * window.innerHeight * 0.5 + "px"; // upper half
+
+  document.body.appendChild(meteor);
+
+  // remove after animation
+  setTimeout(() => meteor.remove(), 1200);
+}
+
+// spawn every 5–7 seconds
+setInterval(spawnMeteor, 6000);
+
+
+
+const links = document.querySelectorAll(".hackclub-program a");
+const stars = document.querySelectorAll(".stars");
+
+links.forEach(link => {
+  // On click
+  link.addEventListener("click", () => {
+    stars.forEach(s => s.classList.add("fast"));
+    setTimeout(() => stars.forEach(s => s.classList.remove("fast")), 1000);
+  });
+
+  // On hover
+  link.addEventListener("mouseenter", () => {
+    stars.forEach(s => s.classList.add("fast"));
+  });
+
+  link.addEventListener("mouseleave", () => {
+    stars.forEach(s => s.classList.remove("fast"));
+  });
+});
+
+
+
+        </script>
+    </body>
+</html>

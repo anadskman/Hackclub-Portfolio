@@ -1,0 +1,245 @@
+html {
+    background-color: #060B1A;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h2 {
+    color: #EAF0FF;
+}
+
+h3 {
+    color: #B7C0E0;
+}
+
+h4 {
+    color: #7C86B3;
+    padding-top: 35%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 25%;
+    padding-top: 15%;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(1.5px 1.5px at 10% 20%, #E6ECFF, transparent),
+    radial-gradient(1.5px 1.5px at 30% 70%, #E6ECFF, transparent),
+    radial-gradient(1.5px 1.5px at 80% 40%, #9AA4C7, transparent),
+    radial-gradient(1.5px 1.5px at 60% 90%, #E6ECFF, transparent);
+  background-size: 120px 120px;
+  animation: drift 150s linear infinite;
+  z-index: -2;
+}
+
+.stars-small {
+  background-size: 80px 80px;
+  opacity: 0.7;
+  animation-duration: 220s;
+}
+
+.stars-tiny {
+  background-size: 50px 50px;
+  opacity: 0.4;
+  animation-duration: 300s;
+}
+
+.stars.fast {
+  animation-duration: 8s;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+.meteor {
+  position: fixed;
+  width: 2px;
+  height: 140px;
+  background: linear-gradient(to bottom, #FFFFFF, rgba(122,184,255,0));
+  pointer-events: none;
+  transform: rotate(55deg);
+  animation: meteor-fly 1.8s linear forwards;
+}
+
+@keyframes meteor-fly {
+  to {
+    transform: translate(1200px, -600px) rotate(75deg);
+    opacity: 0;
+  }
+}
+
+
+
+.hero-text {
+    font-size:xx-large;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 15%;
+}
+
+.hackclub-program {
+    background-color: #0B1228;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow:
+    0 0 15px rgba(120, 180, 255, 0.4),
+    0 0 30px rgba(120, 180, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hackclub-program:hover {
+    transform: translateY(-6px);
+    box-shadow:
+    0 0 25px rgba(120, 180, 255, 0.7),
+    0 0 50px rgba(120, 180, 255, 0.4);
+}
+
+.program-img {
+    display: block;
+    margin: 10px auto 0;
+}
+
+.main-img {
+    
+    padding-left: 36.5% ;
+}
+
+#construct {
+    margin-top: 20%;
+    margin-bottom: 12%;
+}
+
+#blueprint {
+    margin-top: 25%;
+    margin-bottom: 12%;
+}
+
+#flavortown {
+    margin-top: 20%;
+    margin-bottom: 12%;
+}
+
+.project-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.project {
+    margin: 5%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px;
+    box-shadow:
+    0 0 12px rgba(122, 184, 255, 0.35),
+    0 0 24px rgba(122, 184, 255, 0.35);
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow:
+    0 0 18px #A3CEFF,
+    0 0 36px #A3CEFF;
+    cursor: pointer;
+}
+
+.project img {
+    width: 425px;
+    max-height: 160px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 12px;
+}
+
+.project h2 {
+    padding-left: 15px;
+}
+
+.project h3 {
+    padding-left: 15px;
+}
+
+#construct .project {
+    background-color: #b26c00;
+}
+
+#blueprint .project {
+    background-color: #13345e;
+}
+
+#flavortown .project {
+    background-color: #875b54;
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 15%;
+    padding-top: 20%;
+  }
+
+  .hero-text {
+    font-size: large;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 30%;
+  }
+
+  .hackclub-program {
+    width: 85%;
+  }
+
+  h4 {
+    padding-top: 10%;
+  }
+
+  .project-div {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    margin: 8%;
+  }
+
+  .project img {
+    width: 100%;
+    max-height: 180px;
+  }
+
+  #construct,
+  #blueprint,
+  #flavortown {
+    margin-top: 30%;
+    margin-bottom: 25%;
+  }
+
+  .main-img {
+    padding-left: 0;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .stars.fast {
+    animation-duration: 15s;
+  }
+
+}
